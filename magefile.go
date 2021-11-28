@@ -163,6 +163,8 @@ func (Run) Migrate() error {
 
 // Run all code generations
 func (Run) Generate() error {
+	// @3n3a: When 'command' throws err, err var declared & returned
+	// @3n3a: don't understand why 'resolver.go' is deleted twice, but what is clear, is that 'resolver.go' causes problems
 	if err := sh.Run("rm", "-f", "internal/graphql/gqlresolvers/resolver.go"); err != nil {
 		return err
 	}
